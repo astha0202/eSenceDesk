@@ -5766,3 +5766,57 @@ svg {
         transparent
     );
 }
+/* =========================
+   SERVICE CARD IMAGES
+========================= */
+
+.service-photo {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(5, 10, 18, 0.08),
+            rgba(5, 10, 18, 0.82)
+        ),
+        var(--service-img);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.service-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: var(--service-img);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -2;
+}
+
+.service-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 10, 18, 0.05) 0%,
+        rgba(5, 10, 18, 0.18) 40%,
+        rgba(5, 10, 18, 0.88) 100%
+    );
+
+    z-index: -1;
+}
+
+.service-photo > * {
+    position: relative;
+    z-index: 2;
+}

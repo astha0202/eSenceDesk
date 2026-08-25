@@ -5820,3 +5820,33 @@ svg {
     position: relative;
     z-index: 2;
 }
+/* ===== SERVICE PHOTOS — FINAL ===== */
+
+.service-photo {
+    background-image: var(--service-img) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* dark overlay */
+.service-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 10, 18, 0.08),
+        rgba(5, 10, 18, 0.78)
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* content above image */
+.service-photo > * {
+    position: relative;
+    z-index: 2;
+}
